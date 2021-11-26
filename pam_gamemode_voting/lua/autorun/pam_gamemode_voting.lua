@@ -1,3 +1,3 @@
 if SERVER then
-	resource.AddFile("materials/vgui/pam/img_change_gamemode.vmt")
+	resource.AddFile("materials/vgui/pam/gamemode_voting/img_change_gamemode.vmt")
 end
