@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
- "$basetexture" "vgui/pam/special_options/img_change_gamemode"
+ "$basetexture" "vgui/pam/special_options/change_gamemode"
  "$vertexcolor" 1
  "$vertexalpha" 1
  "$translucent" 1
