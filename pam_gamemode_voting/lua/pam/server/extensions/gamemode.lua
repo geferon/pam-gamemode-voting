@@ -1,6 +1,6 @@
 local name = "gamemode"
 PAM_EXTENSION.name = name
-PAM_EXTENSION.enabled = false
+PAM_EXTENSION.enabled = true
 
 local setting_namespace = PAM.setting_namespace:AddChild(name)
 local vote_length_setting = setting_namespace:AddSetting("vote_length", pacoman.TYPE_INTEGER, 30)
