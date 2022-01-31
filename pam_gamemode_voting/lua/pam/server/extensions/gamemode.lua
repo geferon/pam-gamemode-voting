@@ -3,8 +3,8 @@ PAM_EXTENSION.name = name
 PAM_EXTENSION.enabled = true
 
 local setting_namespace = PAM.setting_namespace:AddChild(name)
-local vote_length_setting = setting_namespace:AddSetting("vote_length", pacoman.TYPE_INTEGER, 30)
-local blacklist_setting = setting_namespace:AddSetting("blacklist", pacoman.TYPE_STRING, "base")
+local vote_length_setting = setting_namespace:AddSetting("vote_length", pacoman.TYPE_INTEGER, 30, "The length of the gamemode voting time in seconds.")
+local blacklist_setting = setting_namespace:AddSetting("blacklist", pacoman.TYPE_STRING, "base", "Gamemodes that are listed here won't be available.")
 
 function PAM_EXTENSION:RegisterSpecialOptions()
 	if PAM.vote_type ~= "map" then return end
