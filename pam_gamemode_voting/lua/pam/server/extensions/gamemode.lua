@@ -11,7 +11,7 @@ function PAM_EXTENSION:OnInitialize()
 	PAM.RegisterTypeHandler("gamemode", function(option)
 		PAM.ChangeGamemode(option)
 		PAM.Cancel()
-		PAM.Start()
+		PAM.Start("map")
 	end)
 end
 
