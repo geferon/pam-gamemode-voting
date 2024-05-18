@@ -5,6 +5,7 @@ PAM_EXTENSION.enabled = true
 local setting_namespace = PAM.setting_namespace:AddChild(name)
 local vote_length_setting = setting_namespace:AddSetting("vote_length", pacoman.TYPE_INTEGER, 30, "The length of the gamemode voting time in seconds.")
 local blacklist_setting = setting_namespace:AddSetting("blacklist", pacoman.TYPE_STRING, "base", "Gamemodes that are listed here won't be available.")
+local default_votetype_setting = setting_namespace:AddSetting("gamemode_default_votetype", pacoman.TYPE_BOOLEAN, false, "Gamemode voting becomes the default votetype")
 
 function PAM_EXTENSION:RegisterSpecialOptions()
 	if PAM.vote_type ~= "map" then return end
@@ -31,4 +32,8 @@ function PAM_EXTENSION:RegisterOptions()
 
 		PAM.RegisterOption(gamemode_table.name)
 	end
+end
+
+function PAM_EXTENSION:GetDefaultVoteType()
+	if default_votetype_setting:GetActiveValue() then return "gamemode" end
 end
