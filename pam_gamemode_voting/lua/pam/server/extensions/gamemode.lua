@@ -9,6 +9,7 @@ local default_votetype_setting = setting_namespace:AddSetting("gamemode_default_
 
 function PAM_EXTENSION:OnInitialize()
 	PAM.RegisterTypeHandler("gamemode", function(option)
+		self.vote_ended = true
 		PAM.ChangeGamemode(option)
 		PAM.Cancel()
 		PAM.Start("map")
@@ -17,6 +18,7 @@ end
 
 function PAM_EXTENSION:RegisterSpecialOptions()
 	if PAM.vote_type ~= "map" then return end
+	if self.vote_ended then return end
 
 	PAM.RegisterOption("change_gamemode", function()
 		PAM.Cancel()
